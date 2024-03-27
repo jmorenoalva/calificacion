@@ -1,0 +1,13 @@
+package com.codigo.calificacion.domain.ports.out;
+
+import com.codigo.calificacion.domain.aggregates.dto.CalificacionDTO;
+
+import java.util.List;
+
+public interface CalificacionServiceOut {
+    CalificacionDTO crearCalificacionOut(CalificacionDTO calificacionDTO);
+    CalificacionDTO obtenerCalificacionOut(Long id);
+    List<CalificacionDTO> obtenerTodosOut();
+    CalificacionDTO actualizarOut(Long id, CalificacionDTO calificacionDTO);
+    CalificacionDTO deleteOut(Long id, String usuario);
+}
