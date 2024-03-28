@@ -9,6 +9,10 @@ import org.springframework.stereotype.Component;
 public class CalificacionMapper {
     private static final ModelMapper modelMapper=new ModelMapper();
 
+    public CalificacionMapper() {
+        modelMapper.getConfiguration().setSkipNullEnabled(true);
+    }
+
     public CalificacionDTO mapTopDto(CalificacionEntity calificacionEntity){
         return modelMapper.map(calificacionEntity, CalificacionDTO.class);
     }
