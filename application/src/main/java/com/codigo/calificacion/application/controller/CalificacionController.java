@@ -20,7 +20,7 @@ import java.util.List;
         )
 )
 @RestController
-@RequestMapping("/v1/calificacion")
+@RequestMapping("/v1/calificaciones")
 @RequiredArgsConstructor
 public class CalificacionController {
     private final CalificacionServiceIn calificacionServiceIn;
