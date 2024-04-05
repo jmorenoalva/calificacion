@@ -22,6 +22,10 @@
     <properties>
 		<java.version>17</java.version>
 		<spring-cloud.version>2022.0.5</spring-cloud.version>
+		<sonar.host.url>http://localhost:9000/</sonar.host.url>
+		<sonar.token>sqp_9dec2557b37f6bc5f0f2758e9f5c2df3b42bb142</sonar.token>
+		<sonar.projectKey>calificacion</sonar.projectKey>
+		<sonar.projectName>calificacion</sonar.projectName>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -87,6 +91,30 @@
 						</exclude>
 					</excludes>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.7</version>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.sonarsource.scanner.maven</groupId>
+				<artifactId>sonar-maven-plugin</artifactId>
+				<version>3.8.0.2131</version>
 			</plugin>
 		</plugins>
 	</build>
